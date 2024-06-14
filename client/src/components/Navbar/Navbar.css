@@ -1,11 +1,19 @@
+body{
+  background-color: #011a07;
+}
 .navbar {
   padding: 10px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ebf4eb;
+  background-color: rgba(242, 245, 236, 0.8);
+ 
+  
   border-radius: 20px;
 }
+
+
+
 
 .navbar .logo-design {
   width: 120px;
@@ -24,7 +32,7 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 25px; /* Adjusted for better alignment */
+  gap: 25px; 
 }
 
 .navbar .signin-button {
@@ -33,7 +41,7 @@
   font-weight: 300;
   color: #dbf2e1;
   border: 1px solid #bbdf02;
-  padding: 10px 20px; /* Adjusted padding for better alignment */
+  padding: 10px 20px; 
   border-radius: 50px;
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
@@ -56,18 +64,23 @@
 }
 
 .navbar li:hover {
-  color: #06b406;
+  color: #b58005;
   font-size: 22px;
 }
 
 .search-form {
   display: flex;
   align-items: center;
-  margin-right: 20px; /* Added margin for spacing */
+  margin-right: 20px; 
+  background-color: rgba(244, 244, 244, 0.8); /* Background color for search form */
+  backdrop-filter: blur(10px); /* Apply backdrop filter for a frosted glass effect */
+  border-radius: 15px;
+  padding: 10px; 
 }
 
 .search-input {
-  padding: 10px 30px; /* Adjusted padding for better alignment */
+  flex: 1;
+  padding: 10px 15px;
   border: 1px solid #ccc;
   border-radius: 15px;
   outline: none;
@@ -85,7 +98,7 @@
 }
 
 .navbar-basket {
-  position: relativ;
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -96,6 +109,173 @@
   min-height: 10px;
   background-color: #06b406;
   border-radius: 50%;
-  top: 48px;
-  right: 123px;
+  top: -5px;
+  right: -5px;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; 
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 95%;
+  background-color: rgba(238, 244, 226, 0.8);
+  backdrop-filter: blur(10px); 
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none; 
+  transform: translateX(-100%); 
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  transform: translateX(0); 
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.sidebar-menu li {
+  font-size: 19px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.close-sidebar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  font-size: 45px;
+  color: #014614;
+  margin-bottom: 20px;
+}
+
+.sidebar-signin-button {
+  background-color: #02330f;
+  font-size: 18px;
+  font-weight: 300;
+  color: #dbf2e1;
+  border: 1px solid #bbdf02;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  margin-top: 20px; 
+}
+
+.sidebar-signin-button:hover {
+  background-color: #caf107;
+  color: rgb(9, 95, 4);
+  font-weight: bold;
+  border: 1px solid #034e17;
+}
+
+.menu-button {
+  background-color: #014614; 
+  color: white; 
+  cursor: pointer;
+  display: none; 
+  border: none; 
+  padding: 10px;
+  border-radius: 5px; 
+}
+
+.menu-button svg {
+  width: 40px; 
+  height: 43px;
+}
+
+
+@media (max-width: 650px) {
+  .navbar .logo-design {
+    width: 90px;
+    border-radius: 50%;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .search-form {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .navbar-basket,
+  .dot {
+    display: none;
+  }
+
+  .navbar .signin-button {
+    display: none;
+  }
+
+  .sidebar {
+    display: block;
+    padding-top: 40px;
+  }
+
+  .search-form-mobile {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .search-input-mobile {
+    flex: 1;
+    padding: 15px 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    background-color: #014614;
+    color: white;
+  }
+
+  .search-button-mobile {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar-menu li.active {
+    padding-bottom: 2px;
+    
+    border-bottom: 2px solid #034e17;
+  }
+
+  .sidebar-signin-button {
+    display: block;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    display: none; 
+}
+
 }
